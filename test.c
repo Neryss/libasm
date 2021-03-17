@@ -4,9 +4,8 @@
 int main()
 {
 	char	s1[] = "salut";
-	char	s2[] = "salut";
-	// printf("ret : %zu\n", ft_strlen("salut!"));
-	printf("diff : %d\n", strcmp(s1, s2));
-	printf("diff : %d\n", ft_strcmp(s1,s2));
+	char	s2[10];
+
+	printf("%s\n", ft_strcpy(s2, s1));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 12:13:34 by ckurt             #+#    #+#             */
-/*   Updated: 2021/03/17 13:19:21 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 14:31:26 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 
 size_t		ft_strlen(const char *str);
 int			ft_strcmp(const char *s1, const char *s2);
+char		*ft_strcpy(char *s1, const char *s2);
 
 #endif
