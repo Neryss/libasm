@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 13:59:39 by ckurt             #+#    #+#              #
-#    Updated: 2021/03/16 14:55:40 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2021/03/17 12:31:22 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS =	srcs/ft_read.s \
 		srcs/ft_write.s 
 OBJS = $(SRCS:.s=.o)
 
-%.o: %.s
+%.o: %.s ./libasm.h
 	@printf "$(_PURPLE)[$(NAME)] $(_END)$(_CYAN)[+] $(_END)Compiling $(_BLUE)owo$(_END) | $(_CYAN)$<$(_END)\n" | tr "lr" "w"
 	@$(ASM) $< -o $(<:.s=.o)
 
@@ -62,7 +62,7 @@ clean:
 	@rm -f $(OBJS)
 
 test: $(NAME)
-	gcc test.c $(NAME)
+	gcc test.c -L . -lasm
 
 fclean: clean
 	@rm -f $(NAME)

@@ -1,5 +1,7 @@
+#include "libasm.h"
+
 int main()
 {
-	_ft_strlen()
-	return (1);
+	printf("ret : %zu\n", ft_strlen("salut!"));
+	return (0);
 }
