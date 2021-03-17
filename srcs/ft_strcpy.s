@@ -7,7 +7,9 @@ loop:
 	je		end
 	mov		dl, [rsi]
 	mov		[rdi], dl
-	inc		rdi
 	inc		rsi
+	inc		rdi
+	jmp		loop
 end:
+	mov		[rdi], byte 0
 	ret
