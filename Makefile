@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 13:59:39 by ckurt             #+#    #+#              #
-#    Updated: 2021/03/17 12:31:22 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2021/03/17 15:53:31 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ clean:
 	@rm -f $(OBJS)
 
 test: $(NAME)
-	gcc test.c -L . -lasm
+	@gcc test.c -L . -lasm
+	@printf "$(_PURPLE)[$(NAME)] $(_END)$(_BLUE)[✓] $(_END)$(_UNDER)$(_BOLD)$(_GREEN)Compiled with test owo$(_END)\n" | tr "lr" "w"
 
 fclean: clean
 	@rm -f $(NAME)
