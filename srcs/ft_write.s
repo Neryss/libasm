@@ -8,8 +8,8 @@ _ft_write:
 error:
 	mov		rdi, rax
 	push	rdi
-	call	___error
+	call	___error	;push rax into rdi, push it so ___error can do its things
 	pop		rdi
-	mov		[rax], rdi
+	mov		[rax], rdi	;move rdi to rax¿¿¿
 	mov		rax, -1
 	ret
