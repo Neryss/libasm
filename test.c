@@ -86,11 +86,28 @@ void	test_read()
 	close(f);
 }
 
+void	test_write(char *str)
+{
+	int	fd;
+	fd = open("real_test.txt", O_RDWR);
+	printf("\033[33mTesting read with test.c\n\n\033[0m");
+	ft_write(1, str, ft_strlen(str));
+	write(1, str, ft_strlen(str));
+	write(fd, str, ft_strlen(str));
+	printf("Real output written inside of real_test.txt\n");
+	close(fd);
+	fd = open("ft_test.txt", O_RDWR);
+	write(fd, str, ft_strlen(str));
+	printf("ft output written inside of ft_test.txt\n");
+	close(fd);
+}
+
 int main()
 {
 	test_strcpy();
 	test_strlen();
 	test_strcmp();
 	test_read();
+	test_write("salut les girls en fait\n");
 	return (0);
 }

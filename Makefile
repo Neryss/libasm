@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 13:59:39 by ckurt             #+#    #+#              #
-#    Updated: 2021/03/19 19:28:30 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2021/03/19 21:14:07 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,8 +60,9 @@ re: fclean
 clean:
 	@printf "$(_PURPLE)[$(NAME)] $(_END)$(_RED)[-]$(_END) Objects deleted!\n"
 	@rm -f $(OBJS)
+	@rm -f ft_test.txt real_test.txt
 
-test: $(NAME)
+test: $(NAME) test.c
 	@gcc test.c -L . -lasm -o test
 	@printf "$(_PURPLE)[$(NAME)] $(_END)$(_BLUE)[✓] $(_END)$(_UNDER)$(_BOLD)$(_GREEN)Compiled with test owo$(_END)\n" | tr "lr" "w"
 
