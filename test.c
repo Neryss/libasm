@@ -67,10 +67,30 @@ void	test_strcmp()
 	printf("ft   : %d\n\n", ft_strcmp(c1, empty));
 }
 
+void	test_read()
+{
+	int	f;
+	int	d;
+	int	bytes;
+	char	buf[13];
+	printf("\033[33mTesting read with test.c\n\n\033[0m");
+	f = open("test.c", O_RDONLY);
+	bytes = read(f, &buf, 13);
+	buf[12] = 0;
+	printf("Real read the %d following bytes : %s\n", bytes, buf);
+	close(f);
+	f = open("test.c", O_RDONLY);
+	bytes = ft_read(f, buf, 13);
+	buf[12] = 0;
+	printf("ft   read the %d following bytes : %s\n\n", bytes, buf);
+	close(f);
+}
+
 int main()
 {
 	test_strcpy();
 	test_strlen();
 	test_strcmp();
+	test_read();
 	return (0);
 }
