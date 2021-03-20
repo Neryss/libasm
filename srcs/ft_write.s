@@ -10,6 +10,6 @@ error:
 	push	rdi
 	call	___error	;push rax into rdi, push it so ___error can do its things
 	pop		rdi
-	mov		[rax], rdi	;move rdi to rax¿¿¿
-	mov		rax, -1
+	mov		[rax], rdi	;move rdi to rax because of modif by the prev call ¿¿¿
+	mov		rax, -1		;yeah well idk
 	ret

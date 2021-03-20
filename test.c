@@ -102,6 +102,11 @@ void	test_write(char *str)
 	close(fd);
 }
 
+void	test_strdup(void)
+{
+	return ;
+}
+
 int main(int argc, char **argv)
 {
 	(void)argc;
@@ -110,6 +115,7 @@ int main(int argc, char **argv)
 	test_strlen();
 	test_strcmp();
 	test_read();
-	test_write("salut les girls en fait\n");
+	test_write("salut les gens en fait\n");
+	test_strdup();
 	return (0);
 }

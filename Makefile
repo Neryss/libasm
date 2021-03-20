@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 13:59:39 by ckurt             #+#    #+#              #
-#    Updated: 2021/03/19 21:14:07 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2021/03/20 11:42:41 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,3 +68,4 @@ test: $(NAME) test.c
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f test
