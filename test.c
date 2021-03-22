@@ -89,14 +89,14 @@ void	test_read(void)
 void	test_write(char *str)
 {
 	int	fd;
-	fd = open("real_test.txt", O_RDWR);
+	fd = open("real_test.txt", O_RDWR | O_CREAT, 0775);
 	printf("\033[33mTesting read with test.c\n\n\033[0m");
 	ft_write(1, str, ft_strlen(str));
 	write(1, str, ft_strlen(str));
 	write(fd, str, ft_strlen(str));
 	printf("Real output written inside of real_test.txt\n");
 	close(fd);
-	fd = open("ft_test.txt", O_RDWR);
+	fd = open("ft_test.txt", O_RDWR | O_CREAT, 0775);
 	write(fd, str, ft_strlen(str));
 	printf("ft output written inside of ft_test.txt\n");
 	close(fd);
@@ -104,7 +104,17 @@ void	test_write(char *str)
 
 void	test_strdup(void)
 {
-	return ;
+	printf("\033[33mTesting strdup\n\n\033[0m");
+	char	*str = "salut";
+	char	*s1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+	char	*s2 = "I'm a little sentence, you get it, it's working";
+
+	printf("real with (%s) : %s\n", str, strdup(str));
+	printf("ft   with (%s) : %s\n\n", str, strdup(str));
+	printf("real with (%s) : %s\n", s1, strdup(s1));
+	printf("ft   with (%s) : %s\n\n", s1, strdup(s1));
+	printf("real with (%s) : %s\n", s2, strdup(s2));
+	printf("ft   with (%s) : %s\n", s2, strdup(s2));
 }
 
 int main(int argc, char **argv)
